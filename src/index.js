@@ -75,7 +75,7 @@ app.post("/sub",(req,res)=>{
 app.post("/multiply",(req,res)=>{
     const num1=req.body.num1
     const num2=req.body.num2
-    const res=num1*num2
+    const rest=num1*num2
     if(num1<-1000000 || num2<-1000000 || result<-1000000 ){
         res.send({
             status:"error",
@@ -97,14 +97,14 @@ app.post("/multiply",(req,res)=>{
         res.send({
             status:"sucess",
             message: "the sum of given two numbers",
-            result: res
+            result: rest
         })
     }
 })
 app.post("/divide",(req,res)=>{
     const num1=req.body.num1
     const num2=req.body.num2
-    const res=num1/num2
+    const rest=num1/num2
     if(num2==0){
         res.send({
             status:"error",
@@ -132,7 +132,7 @@ app.post("/divide",(req,res)=>{
         res.send({
             status:"sucess",
             message: "the sum of given two numbers",
-            result: res
+            result: rest
         })
     }
 })
