@@ -105,7 +105,7 @@ app.post("/divide",(req,res)=>{
     const num1=req.body.num1
     const num2=req.body.num2
     const rest=num1/num2
-    if(num2==0){
+    if(num2===0){
         res.send({
             status:"error",
             message:"Cannot divide by zero"
