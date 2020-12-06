@@ -39,7 +39,7 @@ app.post("/add",(req,res)=>{
         res.send({
             status:"sucess",
             message: "the sum of given two numbers",
-            sum: result
+            sum: num1+num2
         })
     }
 })
@@ -67,7 +67,7 @@ app.post("/sub",(req,res)=>{
     else{
         res.send({
             status:"sucess",
-            message: "the sum of given two numbers",
+            message: "the diffrence of given two numbers",
             diffrence: result
         })
     }
@@ -76,12 +76,12 @@ app.post("/multiply",(req,res)=>{
     const num1=req.body.num1
     const num2=req.body.num2
     const rest=num1*num2
-    if(num1<-1000000 || num2<-1000000 || result<-1000000 ){
+    if(num1<-1000000 || num2<-1000000 || rest<-1000000 ){
         res.send({
             status:"error",
             message:"Underflow"
         })
-    }else if(num1>1000000 || num2>1000000 || result>1000000){
+    }else if(num1>1000000 || num2>1000000 || rest>1000000){
         res.send({
             status:"error",
             message:"Overflow"
@@ -111,12 +111,12 @@ app.post("/divide",(req,res)=>{
             message:"Cannot divide by zero"
         })
     }
-    else if(num1<-1000000 || num2<-1000000 || result<-1000000 ){
+    else if(num1<-1000000 || num2<-1000000 || rest<-1000000 ){
         res.send({
             status:"error",
             message:"Underflow"
         })
-    }else if(num1>1000000 || num2>1000000 || result>1000000){
+    }else if(num1>1000000 || num2>1000000 || rest>1000000){
         res.send({
             status:"error",
             message:"Overflow"
